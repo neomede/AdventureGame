@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+        <meta name="description" content="">
+    </head>
+    <body>
+        <script src="js/vendor/pixi.js"></script>
+        <script>
+            /* ASSETS */
+            //create an array of assets to load
+            var assetsToLoader = [ "img/sara_meditation.json"];
+
+            // create a new loader
+            loader = new PIXI.AssetLoader(assetsToLoader);
+
+            // use callback
+            loader.onComplete = onAssetsLoaded
+
+            //begin load
+            loader.load();
+
+            /* STAGE */
+            // create an new instance of a pixi stage
+            var stage = new PIXI.Stage(0x66FF99);
+
+            // create a renderer instance.
+            var renderer = PIXI.autoDetectRenderer(800, 600);
+
+            // add the renderer view element to the DOM
+            document.body.appendChild(renderer.view);
+
+            function onAssetsLoaded(){
+                var characterTexture = [];
+                for (var i = 0; i < 12; i++){
+                    var texture = PIXI.Texture.fromFrame("sara_" + i + ".png");
+                    characterTexture.push(texture);
+                }
+
+                var character = new PIXI.MovieClip(characterTexture);
+                character.position.x = 400;
+                character.position.y = 300;
+                character.anchor.x = 0.5;
+                character.anchor.y = 0.5;
+                character.animationSpeed = 0.1;
+                character.loop = false;
+                character.interactive = true;
+                character.click = function(){
+                    this.play();
+                }
+                character.onComplete = function(){
+                    this.currentFrame = 0;
+                }
+
+                stage.addChild(character);
+
+                // start animating
+                requestAnimFrame( animate );
+            }
+
+            function animate() {
+                requestAnimFrame( animate );
+                renderer.render(stage);
+            }
+        </script>
+    </body>
+</html>

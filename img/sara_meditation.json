@@ -1,0 +1,108 @@
+{"frames": {
+
+"sara_0.png":
+{
+	"frame": {"x":2,"y":140,"w":43,"h":69},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":43,"h":69},
+	"sourceSize": {"w":43,"h":69}
+},
+"sara_1.png":
+{
+	"frame": {"x":2,"y":2,"w":51,"h":64},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":51,"h":64},
+	"sourceSize": {"w":51,"h":64}
+},
+"sara_10.png":
+{
+	"frame": {"x":2,"y":2,"w":51,"h":64},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":51,"h":64},
+	"sourceSize": {"w":51,"h":64}
+},
+"sara_11.png":
+{
+	"frame": {"x":2,"y":140,"w":43,"h":69},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":43,"h":69},
+	"sourceSize": {"w":43,"h":69}
+},
+"sara_2.png":
+{
+	"frame": {"x":55,"y":2,"w":51,"h":66},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":51,"h":66},
+	"sourceSize": {"w":51,"h":66}
+},
+"sara_3.png":
+{
+	"frame": {"x":2,"y":70,"w":56,"h":68},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":56,"h":68},
+	"sourceSize": {"w":56,"h":68}
+},
+"sara_4.png":
+{
+	"frame": {"x":47,"y":140,"w":61,"h":70},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":61,"h":70},
+	"sourceSize": {"w":61,"h":70}
+},
+"sara_5.png":
+{
+	"frame": {"x":60,"y":70,"w":65,"h":68},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":65,"h":68},
+	"sourceSize": {"w":65,"h":68}
+},
+"sara_6.png":
+{
+	"frame": {"x":60,"y":70,"w":65,"h":68},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":65,"h":68},
+	"sourceSize": {"w":65,"h":68}
+},
+"sara_7.png":
+{
+	"frame": {"x":47,"y":140,"w":61,"h":70},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":61,"h":70},
+	"sourceSize": {"w":61,"h":70}
+},
+"sara_8.png":
+{
+	"frame": {"x":2,"y":70,"w":56,"h":68},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":56,"h":68},
+	"sourceSize": {"w":56,"h":68}
+},
+"sara_9.png":
+{
+	"frame": {"x":55,"y":2,"w":51,"h":66},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":51,"h":66},
+	"sourceSize": {"w":51,"h":66}
+}},
+"meta": {
+	"app": "http://www.codeandweb.com/texturepacker ",
+	"version": "1.0",
+	"image": "sara_meditation.png",
+	"format": "RGBA8888",
+	"size": {"w":128,"h":256},
+	"scale": "1",
+	"smartupdate": "$TexturePacker:SmartUpdate:dca8750d85698c3c90820981cdcfc857:35db78a091acaddc46552a9a82ea2319:7e44a452a872489a4f0e70e1b4f56a77$"
+}
+}
