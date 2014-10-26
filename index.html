@@ -9,7 +9,7 @@
         <script>
             /* ASSETS */
             //create an array of assets to load
-            var assetsToLoader = [ "img/sara_meditation.json"];
+            var assetsToLoader = [ "img/sara_meditation.json", "img/sara_walk.json", "img/background.png", "img/ground.png"];
 
             // create a new loader
             loader = new PIXI.AssetLoader(assetsToLoader);
@@ -30,21 +30,64 @@
             // add the renderer view element to the DOM
             document.body.appendChild(renderer.view);
 
+            var position = 0;
+            var background, background2;
+            var foreground, foreground2;
+
             function onAssetsLoaded(){
+                background = PIXI.Sprite.fromImage("img/background.png");
+                background2 = PIXI.Sprite.fromImage("img/background.png");
+                stage.addChild(background);
+                stage.addChild(background2);
+
+                foreground = PIXI.Sprite.fromImage("img/ground.png");
+                foreground2 = PIXI.Sprite.fromImage("img/ground.png");
+                stage.addChild(foreground);
+                stage.addChild(foreground2);
+                foreground.position.y = foreground2.position.y = 640 - foreground2.height;
+
+                var character = createCharacter();
+                stage.addChild(character);
+
+                // start animating
+                requestAnimFrame( animate );
+            }
+
+//            function createBackground(){
+//                background = PIXI.Sprite.fromImage("img/background.png");
+//                background2 = PIXI.Sprite.fromImage("img/background.png");
+//                stage.addChild(background);
+//                stage.addChild(background2);
+//
+//                foreground = PIXI.Sprite.fromImage("img/ground.png");
+//                foreground2 = PIXI.Sprite.fromImage("img/ground.png");
+//                stage.addChild(foreground);
+//                stage.addChild(foreground2);
+//                foreground.position.y = foreground2.position.y = 640 - foreground2.height;
+//            }
+
+            function createCharacter(){
+                //Load textures
                 var characterTexture = [];
                 for (var i = 0; i < 12; i++){
                     var texture = PIXI.Texture.fromFrame("sara_" + i + ".png");
                     characterTexture.push(texture);
                 }
 
+                //Character
                 var character = new PIXI.MovieClip(characterTexture);
                 character.position.x = 400;
-                character.position.y = 300;
+                character.position.y = 530;
                 character.anchor.x = 0.5;
                 character.anchor.y = 0.5;
                 character.animationSpeed = 0.1;
                 character.loop = false;
                 character.interactive = true;
+
+                stage.mousedown = stage.touchstart = function(){
+                    //Do something
+                }
+
                 character.click = function(){
                     this.play();
                 }
@@ -52,13 +95,44 @@
                     this.currentFrame = 0;
                 }
 
-                stage.addChild(character);
+                return character;
+            }
 
-                // start animating
-                requestAnimFrame( animate );
+            function createCharacterWalkRight(){
+                //Load textures
+                var characterTexture = [];
+                for (var i = 0; i < 9; i++){
+                    var texture = PIXI.Texture.fromFrame("sara_walk_" + i + ".png")
+                    characterTexture.push(texture);
+                }
+
+                var character = new PIXI.MovieClip(characterTexture);
+                //CONTINUAR --> HACER MOVIMIENTO AL ANDAR, VER COMO CAMBIAR UN MOVIE CLIP A OTRO PARA EL MOVIMIENTO DE ANDAR IZQUIERDA/DERECHA Y ESTADO DEL PERSONAJE PARADO...
             }
 
             function animate() {
+                position += 1;
+
+                background.position.x = -(position * 0.6);
+                background.position.x %= 2048 * 2;
+                if(background.position.x<0) background.position.x += 2048 * 2;
+                background.position.x -= 2048;
+
+                background2.position.x = -(position * 0.6) + 2048;
+                background2.position.x %= 2048 * 2;
+                if(background2.position.x<0) background2.position.x += 2048 * 2;
+                background2.position.x -= 2048;
+
+//                foreground.position.x = -position;
+//                foreground.position.x %= 2048 * 2;
+//                if(foreground.position.x<0)foreground.position.x += 2048 * 2;
+//                foreground.position.x -= 2048;
+//
+//                foreground2.position.x = -position + 2048;
+//                foreground2.position.x %= 2048 * 2;
+//                if(foreground2.position.x<0)foreground2.position.x += 2048 * 2;
+//                foreground2.position.x -= 2048;
+
                 requestAnimFrame( animate );
                 renderer.render(stage);
             }
